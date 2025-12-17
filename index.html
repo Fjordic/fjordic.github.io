@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FjordicNet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Games Hub</h1>
+  <input type="text" id="search" placeholder="Search games…" oninput="filterGames()">
+</header>
+
+<main id="games-list">
+  <div class="game-card">
+    <a href="games/subway-surfers.html" target="_blank">
+      <div class="game-title">Subway Surfers</div>
+      <div class="game-url">yell0wsuit.page</div>
+    </a>
+  </div>
+  <div class="game-card">
+    <a href="games/slope.html" target="_blank">
+      <div class="game-title">Slope 3</div>
+      <div class="game-url">slope3.com</div>
+    </a>
+  </div>
+</main>
+
+<script>
+function filterGames() {
+  let input = document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll('.game-card').forEach(card => {
+    let title = card.textContent.toLowerCase();
+    card.style.display = title.includes(input) ? "" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
